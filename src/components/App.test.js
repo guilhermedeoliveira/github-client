@@ -1,8 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { expect } from 'chai';
+import { shallow, mount } from 'enzyme';
 
-it('renders without crashing', () => {
-	const div = document.createElement('div');
-	ReactDOM.render(<App />, div);
+import App from './App';
+import Search from './Search';
+
+describe('<App />', () => {
+	it('renders without crashing', () => {
+		mount(<App />);
+	});
+	it('renders without crashing', () => {
+		const div = document.createElement('div');
+		ReactDOM.render(<App />, div);
+	});
+	it('should render <Search /> component', () => {
+		const wrapper = shallow(<App />);
+		expect(wrapper.find(Search)).to.have.length(1);
+	});
 });

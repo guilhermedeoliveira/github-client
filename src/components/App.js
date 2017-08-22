@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 
+import Search from './Search';
+
 class App extends Component {
 	render() {
-		return <div className="App">Hello World!</div>;
+		return (
+			<div>
+				Hello World!<Search />
+			</div>
+		);
 	}
 }
 
