@@ -1,29 +1,36 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
+import { withRouter } from 'react-router-dom';
 
 import { fetchUser } from '../../actions';
 
 export class Search extends Component {
 	renderField(field) {
+		const { input, meta: { touched, error } } = field;
+
 		return (
 			<div>
-				<input type="text" {...field.input} />
+				<input type="text" {...input} />
 				<div>
-					{field.meta.touched && field.meta.error}
+					{touched && error}
 				</div>
 			</div>
 		);
 	}
 
 	onSubmitUser({ username }) {
-		this.props.fetchUser(username);
+		const { fetchUser, history } = this.props;
+
+		fetchUser(username, history);
+		history.push(`/users/${username}`);
 	}
 
 	render() {
-		console.log(this.props);
+		const { handleSubmit } = this.props;
+
 		return (
-			<form onSubmit={this.props.handleSubmit(this.onSubmitUser.bind(this))}>
+			<form onSubmit={handleSubmit(this.onSubmitUser.bind(this))}>
 				<Field
 					name="username"
 					component={this.renderField}
@@ -31,9 +38,7 @@ export class Search extends Component {
 					placeholder="Search user"
 				/>
 				<button type="submit">Submit</button>
-				<div style={{ marginTop: '20px' }}>
-					{/* {this.props.meta.touched && this.props.meta.error} */}
-				</div>
+				<div style={{ marginTop: '20px' }} />
 			</form>
 		);
 	}
@@ -49,13 +54,7 @@ function validate(values) {
 	return errors;
 }
 
-// export default connect(null, { fetchUser })(Search);
-function mapStateToProps(state) {
-	console.log(state);
-	return { state };
-}
-
 export default reduxForm({
 	validate,
 	form: 'search'
-})(connect(mapStateToProps, { fetchUser })(Search));
+})(connect(null, { fetchUser })(withRouter(Search)));
