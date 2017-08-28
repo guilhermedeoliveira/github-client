@@ -16,8 +16,8 @@ export class Search extends Component {
 		);
 	}
 
-	onSubmitUser(values) {
-		this.props.fetchUser();
+	onSubmitUser({ username }) {
+		this.props.fetchUser(username);
 	}
 
 	render() {
