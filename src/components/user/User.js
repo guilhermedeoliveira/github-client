@@ -4,11 +4,12 @@ import { withRouter } from 'react-router-dom';
 
 import { fetchUser } from '../../actions';
 
-// const User = ({ avatar_url, login, email, bio, followers, following }) => {
 class User extends Component {
 	componentDidMount() {
 		const { user } = this.props.match.params;
-		this.props.fetchUser(user);
+		const { fetchUser } = this.props;
+
+		fetchUser(user);
 	}
 
 	render() {
@@ -19,8 +20,6 @@ class User extends Component {
 		}
 
 		const { avatar_url, login, email, bio, followers, following } = user;
-
-		console.log(this.props); //////////////////////////////////////////////////////
 
 		return (
 			<div>

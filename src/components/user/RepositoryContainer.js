@@ -9,15 +9,17 @@ import Repos from './Repos';
 class RepositoryContainer extends Component {
 	componentDidMount() {
 		const { user } = this.props.match.params;
-		this.props.fetchRepos(user);
+		const { fetchRepos } = this.props;
+
+		fetchRepos(user);
 	}
 
 	renderRepos() {
 		const { repos } = this.props;
 
-		// if (!repos) {
-		// 	return <div>Loading...</div>;
-		// }
+		if (!repos) {
+			return <div>Loading...</div>;
+		}
 
 		return _.map(repos, ({ name, language, id }) => {
 			return <Repos key={id} language={language} name={name} />;
@@ -25,8 +27,6 @@ class RepositoryContainer extends Component {
 	}
 
 	render() {
-		console.log(this.props); //////////////////////////////////////////////////////
-
 		return (
 			<div>
 				{this.renderRepos()}
