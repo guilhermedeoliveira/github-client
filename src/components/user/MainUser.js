@@ -1,37 +1,15 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 
-import { fetchUser } from '../../actions';
 import User from './User';
-import RepositoryList from './RepositoryList';
+import RepositoryContainer from './RepositoryContainer';
 
-export class MainUser extends Component {
-	componentDidMount() {
-		const { user } = this.props.match.params;
-		this.props.fetchUser(user);
-	}
+const MainUser = () => {
+	return (
+		<div>
+			<User />
+			<RepositoryContainer />
+		</div>
+	);
+};
 
-	render() {
-		const { user } = this.props;
-
-		if (!user) {
-			return <div>Loading...</div>;
-		}
-
-		return (
-			<div>
-				<h3>
-					{user.login}
-				</h3>
-				<User />
-				<RepositoryList />
-			</div>
-		);
-	}
-}
-
-function mapStateToProps({ user }) {
-	return { user };
-}
-
-export default connect(mapStateToProps, { fetchUser })(MainUser);
+export default MainUser;
