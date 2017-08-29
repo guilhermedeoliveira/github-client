@@ -13,7 +13,7 @@ class App extends Component {
 					<div>
 						<Route exact path="/" component={MainLanding} />
 						<Route path="/users/:user" component={MainUser} />
-						{/* <Route path="/users/repos" component={SurveyNew} /> */}
+						{/* <Route path="/users/:user/:repos" component={SurveyNew} /> */}
 						<Footer />
 					</div>
 				</BrowserRouter>
