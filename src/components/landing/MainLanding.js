@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Search from './Search';
 
-const Wrapper = styled.div`
+const Container = styled.div`
 	width: 100vw;
 	height: 100vh;
 	text-align: center;
@@ -35,11 +35,11 @@ const Card = styled.div`
 const MainLanding = () => {
 	return (
 		<div>
-			<Wrapper>
+			<Container>
 				<Title>Github Client</Title>
 				<SubTitle>Find repositories of a Github user</SubTitle>
 				<Search />
-			</Wrapper>
+			</Container>
 		</div>
 	);
 };
