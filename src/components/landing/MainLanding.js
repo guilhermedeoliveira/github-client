@@ -10,11 +10,17 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-	color: red;
-	font-weight: 300;
+	font-size: 5rem;
+	color: #24292e;
+	font-weight: 200;
 `;
 
-const SubTitle = styled.h3`color: red;`;
+const SubTitle = styled.h2`
+	font-size: 2rem;
+	font-weight: 300;
+	color: #24292e;
+	margin-bottom: 50px;
+`;
 
 const Card = styled.div`
 	background: #fff;
@@ -31,7 +37,7 @@ const MainLanding = () => {
 		<div>
 			<Wrapper>
 				<Title>Github Client</Title>
-				<SubTitle>Find the most popular repositories of a given user</SubTitle>
+				<SubTitle>Find repositories of a Github user</SubTitle>
 				<Search />
 			</Wrapper>
 		</div>

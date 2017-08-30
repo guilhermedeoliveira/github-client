@@ -8,6 +8,7 @@ import { fetchUser } from '../../actions';
 
 const Input = styled.input`
 	padding: 12px 20px;
+	color: #24292e;
 	margin: 8px 0;
 	display: inline-block;
 	border: none;
@@ -30,22 +31,21 @@ const Input = styled.input`
 const Error = styled.div`
 	color: red;
 	font-weight: 300;
-	margin: 5px;
+	margin: 5px 0;
 `;
 
 const Submit = styled.input`
 	width: 33%;
-	background-color: #4CAF50;
+	background-color: #24292e;
 	color: white;
 	padding: 14px 20px;
-	margin: 8px 0;
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
 }
 
 	&:hover {
-		background-color: #45a049;
+		background-color: #000;
 }
 `;
 
