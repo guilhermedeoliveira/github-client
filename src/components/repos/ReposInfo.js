@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
+import RaisedButton from 'material-ui/RaisedButton';
 
 import * as actions from '../../actions';
-
+import CardInfo from './CardInfo';
 const Name = styled.h3`font-size: 1.5rem;`;
 
 class ReposInfo extends Component {
@@ -18,19 +19,28 @@ class ReposInfo extends Component {
 
 	render() {
 		const { user, repos } = this.props.match.params;
-		const { name, language, default_branch } = this.props.currentRepos;
+		const {
+			name,
+			language,
+			default_branch,
+			description,
+			watchers_count,
+			stargazers_count,
+			forks
+		} = this.props.currentRepos;
 
 		return (
-			<div>
-				<Name>{name}</Name>
-				<h4>Language: {language}</h4>
-				<h4>Branch: {default_branch}</h4>
-				<h4>
-					<a href={`https://github.com/${user}/${repos}`}>
-						Visit Repos in Github
-					</a>
-				</h4>
-			</div>
+			<CardInfo
+				user={user}
+				repos={repos}
+				name={name}
+				language={language}
+				description={description}
+				default_branch={default_branch}
+				watchers_count={watchers_count}
+				stargazers_count={stargazers_count}
+				forks={forks}
+			/>
 		);
 	}
 }
