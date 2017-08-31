@@ -11,25 +11,13 @@ const Container = styled.div`
 
 const Title = styled.h1`
 	font-size: 5rem;
-	color: #24292e;
 	font-weight: 200;
 `;
 
 const SubTitle = styled.h2`
 	font-size: 2rem;
 	font-weight: 300;
-	color: #24292e;
 	margin-bottom: 50px;
-`;
-
-const Card = styled.div`
-	background: #fff;
-	border-radius: 2px;
-	display: inline-block;
-	height: 300px;
-	margin: 1rem;
-	position: relative;
-	width: 300px;
 `;
 
 const MainLanding = () => {

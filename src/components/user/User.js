@@ -8,7 +8,6 @@ import { fetchUser } from '../../actions';
 const Container = styled.section`
 	width: 33%;
 	font-weight: 400;
-	color: #24292e;
 `;
 
 const Avatar = styled.img`
@@ -20,7 +19,6 @@ const Avatar = styled.img`
 const Login = styled.p`
 	font-size: 1.5rem;
 	font-weight: bold;
-	color: #24292e;
 `;
 
 const Name = styled.p`font-size: 1.3rem;`;

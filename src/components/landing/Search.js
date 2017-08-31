@@ -8,7 +8,6 @@ import { fetchUser } from '../../actions';
 
 const Input = styled.input`
 	padding: 12px 20px;
-	color: #24292e;
 	margin: 8px 0;
 	display: inline-block;
 	border: none;

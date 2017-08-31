@@ -14,9 +14,10 @@ const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 injectGlobal`
   body {
     background-color: #fafafa;
+    color: #24292e;
     padding: 0;
     margin: 0;
-    font-family: cursive;
+    font-family: 'Roboto', sans-serif;
   }
 `;
 reactDom.render(
