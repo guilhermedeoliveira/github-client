@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import styled from 'styled-components';
-import RaisedButton from 'material-ui/RaisedButton';
 
 import * as actions from '../../actions';
 import CardInfo from './CardInfo';
-const Name = styled.h3`font-size: 1.5rem;`;
 
 class ReposInfo extends Component {
 	componentDidMount() {
