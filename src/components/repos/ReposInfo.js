@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import styled from 'styled-components';
 
 import * as actions from '../../actions';
+
+const Name = styled.h3`font-size: 1.5rem;`;
 
 class ReposInfo extends Component {
 	componentDidMount() {
@@ -19,16 +22,9 @@ class ReposInfo extends Component {
 
 		return (
 			<div>
-				<h3>ReposInfo</h3>
-				<h4>
-					Name: {name}
-				</h4>
-				<h4>
-					Language: {language}
-				</h4>
-				<h4>
-					Branch: {default_branch}
-				</h4>
+				<Name>{name}</Name>
+				<h4>Language: {language}</h4>
+				<h4>Branch: {default_branch}</h4>
 				<h4>
 					<a href={`https://github.com/${user}/${repos}`}>
 						Visit Repos in Github

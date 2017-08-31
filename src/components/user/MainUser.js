@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import User from './User';
 import RepositoryContainer from './RepositoryContainer';
 
-const Wrapper = styled.div`
+const Container = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
@@ -14,10 +14,10 @@ const Wrapper = styled.div`
 
 const MainUser = () => {
 	return (
-		<Wrapper>
+		<Container>
 			<User />
 			<RepositoryContainer />
-		</Wrapper>
+		</Container>
 	);
 };
 
