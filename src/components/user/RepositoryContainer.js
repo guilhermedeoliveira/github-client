@@ -8,7 +8,10 @@ import Grid from 'material-ui/Grid';
 import { fetchRepos } from '../../actions';
 import Repos from './Repos';
 
-const Container = styled.section`width: 70%;`;
+const Container = styled.section`
+	width: 70%;
+	display: table;
+`;
 
 class RepositoryContainer extends Component {
 	componentDidMount() {
@@ -25,16 +28,21 @@ class RepositoryContainer extends Component {
 			return <div>Loading...</div>;
 		}
 
-		return _.map(repos, ({ id, name, description, language }) => {
-			return (
-				<Repos
-					key={id}
-					name={name}
-					description={description}
-					language={language}
-				/>
-			);
-		});
+		return _.map(
+			repos,
+			({ id, name, description, language, created_at, updated_at }) => {
+				return (
+					<Repos
+						key={id}
+						name={name}
+						description={description}
+						language={language}
+						created={created_at}
+						updated={updated_at}
+					/>
+				);
+			}
+		);
 	}
 
 	render() {

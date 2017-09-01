@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MyFooter = styled.div`
+const MyFooter = styled.footer`
 	width: 100%;
-	height: 20rem;
+	height: 2rem;
 	text-align: center;
+	color: #fff;
 	background-color: #24292e;
 `;
 

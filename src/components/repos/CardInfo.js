@@ -52,7 +52,7 @@ const CardInfo = ({
 			<MySubtitle type="caption">{language}</MySubtitle>
 
 			<MyText type="subheading">{description}</MyText>
-			<MyText type="union">{`Default branch is ${default_branch}`}</MyText>
+			<MyText type="subheading">{`Default branch is ${default_branch}`}</MyText>
 
 			<MyIcon className="fa fa-eye" aria-hidden="true">
 				&nbsp; {watchers_count ? watchers_count : 'No watchers'}
