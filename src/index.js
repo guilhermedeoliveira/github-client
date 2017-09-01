@@ -3,13 +3,15 @@ import reactDom from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import { injectGlobal } from 'styled-components';
 
 import App from './components/App';
 import reducers from './reducers';
 
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
+
+const theme = createMuiTheme();
 
 injectGlobal`
   body {
@@ -20,9 +22,10 @@ injectGlobal`
     font-family: 'Roboto', sans-serif;
   }
 `;
+
 reactDom.render(
 	<Provider store={store}>
-		<MuiThemeProvider>
+		<MuiThemeProvider theme={theme}>
 			<App />
 		</MuiThemeProvider>
 	</Provider>,
