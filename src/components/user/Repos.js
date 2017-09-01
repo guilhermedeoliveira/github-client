@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Paper from 'material-ui/Paper';
+import Grid from 'material-ui/Grid';
+import Typography from 'material-ui/Typography';
 
 import { fetchUser } from '../../actions';
 
-const Card = styled.article`
-	display: table-cell;
-	width: 33%;
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
-		0 3px 1px -2px rgba(0, 0, 0, 0.2);
-	margin-bottom: 2rem;
-	font-size: 1.2rem;
+const MyPaper = styled(Paper)`
+	height: 12rem;
+	padding: 1rem;
+	text-align: center;
 
 	> a {
 		text-decoration: none;
@@ -46,13 +46,15 @@ class Repos extends Component {
 		const { name, description, language } = this.props;
 
 		return (
-			<Card>
-				<Link to={`/users/${user}/${name}`}>
-					<Name>{name}</Name>
-					<p>{description}</p>
-					<Language>{language}</Language>
-				</Link>
-			</Card>
+			<Grid item xs={12} sm={4}>
+				<MyPaper>
+					<Link to={`/users/${user}/${name}`}>
+						<Name>{name}</Name>
+						<p>{description}</p>
+						<Language>{language}</Language>
+					</Link>
+				</MyPaper>
+			</Grid>
 		);
 	}
 }

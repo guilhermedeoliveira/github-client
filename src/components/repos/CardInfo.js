@@ -6,7 +6,7 @@ import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import Divider from 'material-ui/Divider';
 
-const MyCard = styled(Card)`width: 66%;`;
+const MyCard = styled(Card)`width: 70%;`;
 
 const MySubtitle = styled(Typography)`padding-bottom: 0.8rem;`;
 

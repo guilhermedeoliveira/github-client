@@ -2,23 +2,29 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
+import Paper from 'material-ui/Paper';
 
 import { fetchUser } from '../../actions';
 
-const Container = styled.section`
-	width: 33%;
-	font-weight: 400;
+const MyPaper = styled(Paper)`
+	width: 25%;
+	font-weight: 300;
+	padding: 1rem 1rem 0 1rem;
+	margin-right: 1rem;
 `;
 
 const Avatar = styled.img`
+	display: block;
 	border-radius: 50%;
 	width: 50%;
 	height: auto;
+	margin: 0 auto;
 `;
 
 const Login = styled.p`
 	font-size: 1.5rem;
 	font-weight: bold;
+	text-align: center;
 `;
 
 const Name = styled.p`font-size: 1.3rem;`;
@@ -66,7 +72,7 @@ class User extends Component {
 		} = user;
 
 		return (
-			<Container>
+			<MyPaper>
 				<Avatar src={avatar_url} />
 				<Login>{login}</Login>
 				<Name>{name}</Name>
@@ -77,7 +83,7 @@ class User extends Component {
 				<Following>{following} following</Following>
 				<PublicRepos>{public_repos} public repositories</PublicRepos>
 				<Hireable>{hireable ? 'Available for hire' : ''}</Hireable>
-			</Container>
+			</MyPaper>
 		);
 	}
 }

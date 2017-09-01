@@ -3,20 +3,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
-import { GridList } from 'material-ui/GridList';
+import Grid from 'material-ui/Grid';
 
 import { fetchRepos } from '../../actions';
 import Repos from './Repos';
 
-const Container = styled.section`
-	width: 66%;
-	display: table;
-`;
-
-// flex-direction: row;
-// flex-wrap: wrap;
-// justify-content: flex-start;
-// align-items: flex-start;
+const Container = styled.section`width: 70%;`;
 
 class RepositoryContainer extends Component {
 	componentDidMount() {
@@ -46,8 +38,13 @@ class RepositoryContainer extends Component {
 	}
 
 	render() {
-		// return <Container>{this.renderRepos()}</Container>;
-		return <GridList>{this.renderRepos()}</GridList>;
+		return (
+			<Container>
+				<Grid container spacing={16}>
+					{this.renderRepos()}
+				</Grid>
+			</Container>
+		);
 	}
 }
 
