@@ -26,7 +26,7 @@ const MyPaper = styled(Paper)`
 	}
 `;
 
-const Description = styled.p`flex-grow: 2;`;
+const Description = styled.p``;
 
 const DateContainer = styled.div`
 	flex-grow: 1;
@@ -45,21 +45,26 @@ class Repos extends Component {
 
 	render() {
 		const { user } = this.props.match.params;
-		const { name, description, language, created, updated } = this.props;
+		const { name, language, created, updated } = this.props;
 
 		return (
 			<Grid item xs={12} sm={4}>
 				<MyPaper>
 					<Link to={`/users/${user}/${name}`}>
-						<Typography type="headline">{name}</Typography>
+						<Typography type="headline" style={{ display: 'inline-block' }}>
+							{name}
+						</Typography>
 						<Description>
-							{description ? description : 'There is no description'}
+							{language || 'There is no identified language'}
 						</Description>
+
 						<Divider />
+
 						<DateContainer>
 							<Typography>Created at</Typography>
 							<Typography>Last update</Typography>
 						</DateContainer>
+
 						<DateContainer>
 							<Typography>{created}</Typography>
 							<Typography>{updated}</Typography>

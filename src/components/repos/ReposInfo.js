@@ -21,7 +21,7 @@ class ReposInfo extends Component {
 			language,
 			default_branch,
 			description,
-			watchers_count,
+			open_issues,
 			stargazers_count,
 			forks
 		} = this.props.currentRepos;
@@ -34,7 +34,7 @@ class ReposInfo extends Component {
 				language={language}
 				description={description}
 				default_branch={default_branch}
-				watchers_count={watchers_count}
+				open_issues={open_issues}
 				stargazers_count={stargazers_count}
 				forks={forks}
 			/>

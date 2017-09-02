@@ -40,7 +40,7 @@ const CardInfo = ({
 	language,
 	description,
 	default_branch,
-	watchers_count,
+	open_issues,
 	stargazers_count,
 	forks
 }) => (
@@ -54,15 +54,16 @@ const CardInfo = ({
 			<MyText type="subheading">{description}</MyText>
 			<MyText type="subheading">{`Default branch is ${default_branch}`}</MyText>
 
-			<MyIcon className="fa fa-eye" aria-hidden="true">
-				&nbsp; {watchers_count ? watchers_count : 'No watchers'}
-			</MyIcon>
-			<MyIcon className="fa fa-star" aria-hidden="true">
-				&nbsp; {stargazers_count ? stargazers_count : 'No stars'}
-			</MyIcon>
 			<MyForkIcon className="fa fa-code-fork" aria-hidden="true">
-				&nbsp; {forks ? forks : 'No forks'}
+				&nbsp; {forks || 'No forks'}
 			</MyForkIcon>
+			<MyIcon className="fa fa-star" aria-hidden="true">
+				&nbsp; {stargazers_count || 'No stars'}
+			</MyIcon>
+			<MyIcon className="fa fa-exclamation-circle" aria-hidden="true">
+				{/* <MyIcon className="fa fa-eye" aria-hidden="true"> */}
+				&nbsp; {open_issues || 'No issues'}
+			</MyIcon>
 
 			<Divider />
 
