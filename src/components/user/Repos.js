@@ -6,6 +6,7 @@ import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 import Typography from 'material-ui/Typography';
 import Divider from 'material-ui/Divider';
+import moment from 'moment';
 
 import { fetchUser } from '../../actions';
 
@@ -47,6 +48,11 @@ class Repos extends Component {
 		const { user } = this.props.match.params;
 		const { name, language, created, updated } = this.props;
 
+		const create = moment(created).format('L');
+		const update = moment(updated)
+			.startOf('day')
+			.fromNow();
+
 		return (
 			<Grid item xs={12} sm={4}>
 				<MyPaper>
@@ -62,12 +68,12 @@ class Repos extends Component {
 
 						<DateContainer>
 							<Typography>Created at</Typography>
-							<Typography>Last update</Typography>
+							<Typography>Updated</Typography>
 						</DateContainer>
 
 						<DateContainer>
-							<Typography>{created}</Typography>
-							<Typography>{updated}</Typography>
+							<Typography>{create}</Typography>
+							<Typography>{update}</Typography>
 						</DateContainer>
 					</Link>
 				</MyPaper>
